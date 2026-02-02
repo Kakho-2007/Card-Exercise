@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Info</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="left-line"></div>
+
+    <main class="container">
+      <div class="left">
+        <div class="card top-card">
+          <div class="first-line">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+          </div>
+          <h2 class="second-line js-card-number">0000 0000 0000 0000</h2>
+          <div class="third-line">
+            <p class="js-card-name">Jane Aplessed</p>
+            <p class="js-card-date">00/00</p>
+          </div>
+        </div>
+        <div class="card bottom-card">
+          <div class="gray-line"></div>
+          <div class="card-cvc js-card-cvc">000</div>
+          <div class="dashes">
+            ---=-====--=-=-====-----=--=-=-=-=---=-=----==-
+          </div>
+        </div>
+      </div>
+
+      <form class="right js-form">
+        <p>CARDHOLDER NAME</p>
+        <input
+          type="text"
+          placeholder="e.g. Jane Aplessed"
+          class="input-inner js-name-input"
+          oninput="displayName()"
+          required
+        />
+        <p class="mt">CARD NUMBER</p>
+        <input
+          type="text"
+          placeholder="e.g. 1234 5678 9123 0000"
+          class="input-inner js-number-input"
+          oninput="displayNumber()"
+          required
+        />
+        <div class="details mt" oninput="displayDate()">
+          <p class="d1">EXP.DATE (MM/YY)</p>
+          <p class="d2">CVC</p>
+          <div class="YM">
+            <input
+              type="text"
+              placeholder="MM"
+              class="input-inner MM js-month-input"
+              required
+            />
+            <input
+              type="text"
+              placeholder="YY"
+              class="input-inner YY js-year-input"
+              required
+            />
+          </div>
+          <input
+            type="text"
+            placeholder="e.g. 123"
+            class="input-inner CVC js-cvc-input"
+            oninput="displayCVC()"
+            required
+          />
+        </div>
+        <button
+          type="button"
+          class="form-button js-confirm-button"
+          onclick="confirmForm()"
+        >
+          Confirm
+        </button>
+      </form>
+
+      <div class="accept-container js-accept-container">
+        <div class="accept-circle">✓</div>
+        <h1>Thank You!</h1>
+        <p class="accept-text">We have added your card details</p>
+        <button class="form-button accept-button" onclick="goBackToForm()">
+          continue
+        </button>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
